@@ -1,4 +1,4 @@
-package com.bigasus.newse.nonFunctional;
+package com.bigasus.newse.nonFunctional.configuration;
 
 import lombok.Getter;
 import lombok.Setter;
