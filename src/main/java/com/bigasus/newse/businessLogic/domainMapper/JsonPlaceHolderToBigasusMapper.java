@@ -1,4 +1,4 @@
-package com.bigasus.newse.logic.domainMapper;
+package com.bigasus.newse.businessLogic.domainMapper;
 
 
 import com.bigasus.newse.domains.bigasusDomain.BigasusTask;

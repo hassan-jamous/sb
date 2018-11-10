@@ -1,0 +1,5 @@
+endpoints:
+  jsonPlaceHolderDomain: https://jsonplaceholder.typicode.com/todos/
+
+someConfiguration:
+  value: "this is the value"
