@@ -1,13 +1,19 @@
 package com.bigasus.newse.controllers;
 
-import org.springframework.web.bind.annotation.RequestMapping;
+import com.bigasus.newse.services.BigasusService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class BigasusController {
 
-    @RequestMapping("/")
-    public String index() {
-        return "Greetings from Bigasus!";
+    @Autowired
+    BigasusService bigasusService;
+
+    @GetMapping(value = "/{token}")
+    public String token(@PathVariable String token) {
+        return bigasusService.getMeSomething(token);
     }
 }
