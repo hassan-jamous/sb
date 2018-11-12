@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 public class GlobalControllerExceptionHandler {
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)
-    @ExceptionHandler({ RequestValidationException.class })
-    public ResponseEntity<ApiError> handleInvalidInput(RequestValidationException e) {
+    @ExceptionHandler({ EnvironmentValidationException.class })
+    public ResponseEntity<ApiError> handleInvalidInput(EnvironmentValidationException e) {
         return new ResponseEntity<>(new ApiError(ErrorCode.INVALID_REQUEST.getId(),
                 ErrorCode.INVALID_REQUEST.getMsg()), HttpStatus.BAD_REQUEST);
     }
