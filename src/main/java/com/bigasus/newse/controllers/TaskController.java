@@ -1,6 +1,7 @@
 package com.bigasus.newse.controllers;
 
 import com.bigasus.newse.domains.bigasusDomain.BigasusTask;
+import com.bigasus.newse.nonFunctional.aspects.annotations.LogMe;
 import com.bigasus.newse.services.ToDoTaskService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,8 +16,9 @@ public class TaskController {
     @Autowired
     ToDoTaskService toDoTaskService;
 
+    @LogMe
     @GetMapping(value = "/todo/{taskId}")
-    public ResponseEntity<BigasusTask> coordinates(@PathVariable int taskId) {
+    public ResponseEntity<BigasusTask> toDo(@PathVariable int taskId) {
         return new ResponseEntity<>(toDoTaskService.getTask(taskId), HttpStatus.OK);
     }
 }

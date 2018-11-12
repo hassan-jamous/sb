@@ -41,6 +41,7 @@ repositories {
 dependencies {
     compile "org.springframework.boot:spring-boot-starter-web"
     compile "org.projectlombok:lombok:1.16.10"
+    compile "org.aspectj:aspectjweaver:1.9.2"
 }
 
 sourceSets {
