@@ -1,14 +1,16 @@
 package com.bigasus.newse;
 
-import com.bigasus.newse.nonFunctional.EnvironmentValidator;
+import com.bigasus.newse.nonFunctional.validators.EnvironmentValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.PostConstruct;
+import java.time.Duration;
 
 @SpringBootApplication
 @EnableConfigurationProperties
@@ -26,7 +28,10 @@ public class Application {
     }
 
     @Bean
-    public RestTemplate restTemplate() {
-        return new RestTemplate();
+    public RestTemplate restTemplate(RestTemplateBuilder restTemplateBuilder) {
+        return restTemplateBuilder
+                .setConnectTimeout(Duration.ofSeconds(500))
+                .setReadTimeout(Duration.ofSeconds(3000))
+                .build();
     }
 }

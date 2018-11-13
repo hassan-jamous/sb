@@ -1,4 +1,4 @@
-package com.bigasus.newse.nonFunctional.exception;
+package com.bigasus.newse.nonFunctional.exceptions;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

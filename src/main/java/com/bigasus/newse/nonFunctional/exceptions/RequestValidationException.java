@@ -1,4 +1,4 @@
-package com.bigasus.newse.nonFunctional.exception;
+package com.bigasus.newse.nonFunctional.exceptions;
 
 public class RequestValidationException extends RuntimeException {
     public RequestValidationException() {

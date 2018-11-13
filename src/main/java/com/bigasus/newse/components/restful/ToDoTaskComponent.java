@@ -1,4 +1,4 @@
-package com.bigasus.newse.components;
+package com.bigasus.newse.components.restful;
 
 import com.bigasus.newse.domains.jsonPlaceHolderDomain.Task;
 import org.springframework.beans.factory.annotation.Autowired;

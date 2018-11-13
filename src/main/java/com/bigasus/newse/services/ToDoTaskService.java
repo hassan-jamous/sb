@@ -1,6 +1,6 @@
 package com.bigasus.newse.services;
 
-import com.bigasus.newse.components.ToDoTaskComponent;
+import com.bigasus.newse.components.restful.ToDoTaskComponent;
 import com.bigasus.newse.domains.bigasusDomain.BigasusTask;
 import com.bigasus.newse.domains.jsonPlaceHolderDomain.Task;
 import com.bigasus.newse.businessLogic.domainMapper.JsonPlaceHolderToBigasusMapper;

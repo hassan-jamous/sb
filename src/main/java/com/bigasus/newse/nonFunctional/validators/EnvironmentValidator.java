@@ -1,7 +1,7 @@
-package com.bigasus.newse.nonFunctional;
+package com.bigasus.newse.nonFunctional.validators;
 
 import com.bigasus.newse.nonFunctional.configuration.ConfigurationReader;
-import com.bigasus.newse.nonFunctional.exception.EnvironmentValidationException;
+import com.bigasus.newse.nonFunctional.exceptions.EnvironmentValidationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

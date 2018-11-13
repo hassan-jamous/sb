@@ -1,4 +1,4 @@
-package com.bigasus.newse.nonFunctional.requestValidation;
+package com.bigasus.newse.nonFunctional.validators.requestValidators;
 
 
 import com.bigasus.newse.util.StringVerification;

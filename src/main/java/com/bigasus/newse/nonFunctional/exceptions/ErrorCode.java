@@ -1,4 +1,4 @@
-package com.bigasus.newse.nonFunctional.exception;
+package com.bigasus.newse.nonFunctional.exceptions;
 
 import lombok.Getter;
 
