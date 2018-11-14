@@ -1,0 +1,328 @@
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://nlink.webservice.nlink.com.au" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <SOAP-ENV:Body>
+        <tns:searchDigIfcForClientResponse>
+            <tns:searchDigIfcForClientResult>
+                <thePartyList xsi:type="SOAP-ENC:Array">
+                    <thePartyList>
+                        <activeAccountInd xsi:type="xsd:int">0</activeAccountInd>
+                        <partyNum xsi:type="xsd:int">4634700004</partyNum>
+                        <partyType xsi:type="xsd:string">P</partyType>
+                        <theContactAddrList xsi:type="SOAP-ENC:Array">
+                            <theContactAddrList>
+                                <addrClassification/>
+                                <addrType/>
+                                <pref_ind/>
+                                <theAddr>
+                                    <addrID/>
+                                    <addr_1/>
+                                    <addr_2/>
+                                    <addr_3/>
+                                    <countryCode/>
+                                    <pcode/>
+                                    <state/>
+                                    <suburb xsi:type="xsd:string">MELBOURNE</suburb>
+                                </theAddr>
+                            </theContactAddrList>
+                        </theContactAddrList>
+                        <theIndividual>
+                            <DOB xsi:type="xsd:dateTime">1948-10-28T12:00:00.0</DOB>
+                            <firstName xsi:type="xsd:string">Roslyn</firstName>
+                            <gender/>
+                            <lastName xsi:type="xsd:string">Crossman</lastName>
+                            <title/>
+                        </theIndividual>
+                    </thePartyList>
+                    <thePartyList>
+                        <activeAccountInd xsi:type="xsd:int">0</activeAccountInd>
+                        <partyNum xsi:type="xsd:int">53125600001</partyNum>
+                        <partyType xsi:type="xsd:string">P</partyType>
+                        <theContactAddrList xsi:type="SOAP-ENC:Array">
+                            <theContactAddrList>
+                                <addrClassification/>
+                                <addrType/>
+                                <pref_ind/>
+                                <theAddr>
+                                    <addrID/>
+                                    <addr_1/>
+                                    <addr_2/>
+                                    <addr_3/>
+                                    <countryCode/>
+                                    <pcode/>
+                                    <state/>
+                                    <suburb xsi:type="xsd:string">MELBOURNE</suburb>
+                                </theAddr>
+                            </theContactAddrList>
+                        </theContactAddrList>
+                        <theIndividual>
+                            <DOB xsi:type="xsd:dateTime">1940-08-18T12:00:00.0</DOB>
+                            <firstName xsi:type="xsd:string">Nichole</firstName>
+                            <gender/>
+                            <lastName xsi:type="xsd:string">Crossman</lastName>
+                            <title/>
+                        </theIndividual>
+                    </thePartyList>
+                    <thePartyList>
+                        <activeAccountInd xsi:type="xsd:int">1</activeAccountInd>
+                        <partyNum xsi:type="xsd:int">34213100001</partyNum>
+                        <partyType xsi:type="xsd:string">P</partyType>
+                        <theContactAddrList xsi:type="SOAP-ENC:Array">
+                            <theContactAddrList>
+                                <addrClassification/>
+                                <addrType/>
+                                <pref_ind/>
+                                <theAddr>
+                                    <addrID/>
+                                    <addr_1/>
+                                    <addr_2/>
+                                    <addr_3/>
+                                    <countryCode/>
+                                    <pcode/>
+                                    <state/>
+                                    <suburb xsi:type="xsd:string">MELBOURNE</suburb>
+                                </theAddr>
+                            </theContactAddrList>
+                        </theContactAddrList>
+                        <theIndividual>
+                            <DOB xsi:type="xsd:dateTime">1943-08-27T12:00:00.0</DOB>
+                            <firstName xsi:type="xsd:string">Erwin</firstName>
+                            <gender/>
+                            <lastName xsi:type="xsd:string">Desmier</lastName>
+                            <title/>
+                        </theIndividual>
+                    </thePartyList>
+                    <thePartyList>
+                        <activeAccountInd xsi:type="xsd:int">1</activeAccountInd>
+                        <partyNum xsi:type="xsd:int">148363800005</partyNum>
+                        <partyType xsi:type="xsd:string">P</partyType>
+                        <theContactAddrList xsi:type="SOAP-ENC:Array">
+                            <theContactAddrList>
+                                <addrClassification/>
+                                <addrType/>
+                                <pref_ind/>
+                                <theAddr>
+                                    <addrID/>
+                                    <addr_1/>
+                                    <addr_2/>
+                                    <addr_3/>
+                                    <countryCode/>
+                                    <pcode/>
+                                    <state/>
+                                    <suburb xsi:type="xsd:string">MELBOURNE</suburb>
+                                </theAddr>
+                            </theContactAddrList>
+                        </theContactAddrList>
+                        <theIndividual>
+                            <DOB xsi:type="xsd:dateTime">1946-09-23T12:00:00.0</DOB>
+                            <firstName xsi:type="xsd:string">Sirio</firstName>
+                            <gender/>
+                            <lastName xsi:type="xsd:string">Haaksma</lastName>
+                            <title/>
+                        </theIndividual>
+                    </thePartyList>
+                    <thePartyList>
+                        <activeAccountInd xsi:type="xsd:int">1</activeAccountInd>
+                        <partyNum xsi:type="xsd:int">159050100005</partyNum>
+                        <partyType xsi:type="xsd:string">P</partyType>
+                        <theContactAddrList xsi:type="SOAP-ENC:Array">
+                            <theContactAddrList>
+                                <addrClassification/>
+                                <addrType/>
+                                <pref_ind/>
+                                <theAddr>
+                                    <addrID/>
+                                    <addr_1/>
+                                    <addr_2/>
+                                    <addr_3/>
+                                    <countryCode/>
+                                    <pcode/>
+                                    <state/>
+                                    <suburb xsi:type="xsd:string">MELBOURNE</suburb>
+                                </theAddr>
+                            </theContactAddrList>
+                        </theContactAddrList>
+                        <theIndividual>
+                            <DOB xsi:type="xsd:dateTime">1944-10-16T12:00:00.0</DOB>
+                            <firstName xsi:type="xsd:string">Yasmine</firstName>
+                            <gender/>
+                            <lastName xsi:type="xsd:string">Ilott</lastName>
+                            <title/>
+                        </theIndividual>
+                    </thePartyList>
+                    <thePartyList>
+                        <activeAccountInd xsi:type="xsd:int">1</activeAccountInd>
+                        <partyNum xsi:type="xsd:int">1012500004</partyNum>
+                        <partyType xsi:type="xsd:string">P</partyType>
+                        <theContactAddrList xsi:type="SOAP-ENC:Array">
+                            <theContactAddrList>
+                                <addrClassification/>
+                                <addrType/>
+                                <pref_ind/>
+                                <theAddr>
+                                    <addrID/>
+                                    <addr_1/>
+                                    <addr_2/>
+                                    <addr_3/>
+                                    <countryCode/>
+                                    <pcode/>
+                                    <state/>
+                                    <suburb xsi:type="xsd:string">MELBOURNE</suburb>
+                                </theAddr>
+                            </theContactAddrList>
+                        </theContactAddrList>
+                        <theIndividual>
+                            <DOB xsi:type="xsd:dateTime">1941-02-23T12:00:00.0</DOB>
+                            <firstName xsi:type="xsd:string">Tasman</firstName>
+                            <gender/>
+                            <lastName xsi:type="xsd:string">Kicovsky</lastName>
+                            <title/>
+                        </theIndividual>
+                    </thePartyList>
+                    <thePartyList>
+                        <activeAccountInd xsi:type="xsd:int">0</activeAccountInd>
+                        <partyNum xsi:type="xsd:int">5554300004</partyNum>
+                        <partyType xsi:type="xsd:string">P</partyType>
+                        <theContactAddrList xsi:type="SOAP-ENC:Array">
+                            <theContactAddrList>
+                                <addrClassification/>
+                                <addrType/>
+                                <pref_ind/>
+                                <theAddr>
+                                    <addrID/>
+                                    <addr_1/>
+                                    <addr_2/>
+                                    <addr_3/>
+                                    <countryCode/>
+                                    <pcode/>
+                                    <state/>
+                                    <suburb xsi:type="xsd:string">MELBOURNE</suburb>
+                                </theAddr>
+                            </theContactAddrList>
+                        </theContactAddrList>
+                        <theIndividual>
+                            <DOB xsi:type="xsd:dateTime">1947-07-16T12:00:00.0</DOB>
+                            <firstName xsi:type="xsd:string">Radomir</firstName>
+                            <gender/>
+                            <lastName xsi:type="xsd:string">Mossman</lastName>
+                            <title/>
+                        </theIndividual>
+                    </thePartyList>
+                    <thePartyList>
+                        <activeAccountInd xsi:type="xsd:int">1</activeAccountInd>
+                        <partyNum xsi:type="xsd:int">157456200005</partyNum>
+                        <partyType xsi:type="xsd:string">P</partyType>
+                        <theContactAddrList xsi:type="SOAP-ENC:Array">
+                            <theContactAddrList>
+                                <addrClassification/>
+                                <addrType/>
+                                <pref_ind/>
+                                <theAddr>
+                                    <addrID/>
+                                    <addr_1/>
+                                    <addr_2/>
+                                    <addr_3/>
+                                    <countryCode/>
+                                    <pcode/>
+                                    <state/>
+                                    <suburb xsi:type="xsd:string">MELBOURNE</suburb>
+                                </theAddr>
+                            </theContactAddrList>
+                        </theContactAddrList>
+                        <theIndividual>
+                            <DOB xsi:type="xsd:dateTime">1954-05-24T12:00:00.0</DOB>
+                            <firstName xsi:type="xsd:string">Tasman</firstName>
+                            <gender/>
+                            <lastName xsi:type="xsd:string">Paniaras</lastName>
+                            <title/>
+                        </theIndividual>
+                    </thePartyList>
+                    <thePartyList>
+                        <activeAccountInd xsi:type="xsd:int">1</activeAccountInd>
+                        <partyNum xsi:type="xsd:int">24960100001</partyNum>
+                        <partyType xsi:type="xsd:string">P</partyType>
+                        <theContactAddrList xsi:type="SOAP-ENC:Array">
+                            <theContactAddrList>
+                                <addrClassification/>
+                                <addrType/>
+                                <pref_ind/>
+                                <theAddr>
+                                    <addrID/>
+                                    <addr_1/>
+                                    <addr_2/>
+                                    <addr_3/>
+                                    <countryCode/>
+                                    <pcode/>
+                                    <state/>
+                                    <suburb xsi:type="xsd:string">MELBOURNE</suburb>
+                                </theAddr>
+                            </theContactAddrList>
+                        </theContactAddrList>
+                        <theIndividual>
+                            <DOB xsi:type="xsd:dateTime">1943-02-03T12:00:00.0</DOB>
+                            <firstName xsi:type="xsd:string">Pettina</firstName>
+                            <gender/>
+                            <lastName xsi:type="xsd:string">Smerdon</lastName>
+                            <title/>
+                        </theIndividual>
+                    </thePartyList>
+                    <thePartyList>
+                        <activeAccountInd xsi:type="xsd:int">1</activeAccountInd>
+                        <partyNum xsi:type="xsd:int">5985700004</partyNum>
+                        <partyType xsi:type="xsd:string">P</partyType>
+                        <theContactAddrList xsi:type="SOAP-ENC:Array">
+                            <theContactAddrList>
+                                <addrClassification/>
+                                <addrType/>
+                                <pref_ind/>
+                                <theAddr>
+                                    <addrID/>
+                                    <addr_1/>
+                                    <addr_2/>
+                                    <addr_3/>
+                                    <countryCode/>
+                                    <pcode/>
+                                    <state/>
+                                    <suburb xsi:type="xsd:string">MELBOURNE</suburb>
+                                </theAddr>
+                            </theContactAddrList>
+                        </theContactAddrList>
+                        <theIndividual>
+                            <DOB xsi:type="xsd:dateTime">1943-05-17T12:00:00.0</DOB>
+                            <firstName xsi:type="xsd:string">Elsa</firstName>
+                            <gender/>
+                            <lastName xsi:type="xsd:string">Smid</lastName>
+                            <title/>
+                        </theIndividual>
+                    </thePartyList>
+                    <thePartyList>
+                        <activeAccountInd xsi:type="xsd:int">1</activeAccountInd>
+                        <partyNum xsi:type="xsd:int">37612300001</partyNum>
+                        <partyType xsi:type="xsd:string">P</partyType>
+                        <theContactAddrList xsi:type="SOAP-ENC:Array">
+                            <theContactAddrList>
+                                <addrClassification/>
+                                <addrType/>
+                                <pref_ind/>
+                                <theAddr>
+                                    <addrID/>
+                                    <addr_1/>
+                                    <addr_2/>
+                                    <addr_3/>
+                                    <countryCode/>
+                                    <pcode/>
+                                    <state/>
+                                    <suburb xsi:type="xsd:string">MELBOURNE</suburb>
+                                </theAddr>
+                            </theContactAddrList>
+                        </theContactAddrList>
+                        <theIndividual>
+                            <firstName xsi:type="xsd:string">Byron</firstName>
+                            <gender/>
+                            <lastName xsi:type="xsd:string">Smylie</lastName>
+                            <title/>
+                        </theIndividual>
+                    </thePartyList>
+                </thePartyList>
+            </tns:searchDigIfcForClientResult>
+        </tns:searchDigIfcForClientResponse>
+    </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

@@ -1,5 +1,34 @@
+spring:
+  profiles:
+    active: local
+
 endpoints:
   jsonPlaceHolderDomain: https://jsonplaceholder.typicode.com/todos/
 
 someConfiguration:
   value: "this is the value"
+---
+spring:
+  profiles: local
+
+endpoints:
+  jsonPlaceHolderDomain: https://jsonplaceholder.typicode.com/todos/
+---
+spring:
+    profiles: StubbedTest
+
+endpoints:
+  jsonPlaceHolderDomain: https://jsonplaceholder.typicode.com/todos/
+---
+spring:
+    profiles: IntegrationTest
+
+endpoints:
+  jsonPlaceHolderDomain: https://jsonplaceholder.typicode.com/todos/
+---
+spring:
+    profiles: prod
+
+endpoints:
+  jsonPlaceHolderDomain: https://jsonplaceholder.typicode.com/todos/
+---

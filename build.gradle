@@ -27,8 +27,8 @@ dependencyManagement {
 }
 
 configurations {
-    integrationTestCompile.extendsFrom testCompile
-    integrationTestRuntime.extendsFrom testRuntime
+    featureTestCompile.extendsFrom testCompile
+    featureTestRuntime.extendsFrom testRuntime
 }
 
 sourceCompatibility = 1.8
@@ -42,19 +42,43 @@ dependencies {
     compile "org.springframework.boot:spring-boot-starter-web"
     compile "org.projectlombok:lombok:1.16.10"
     compile "org.aspectj:aspectjweaver:1.9.2"
+
+//    featureTestCompile "org.springframework.boot:spring-boot-starter-test"
+//    featureTestCompile "com.github.tomakehurst:wiremock-standalone:2.16.0"
+//    featureTestCompile "info.cukes:cucumber-java:1.2.5"
+//    featureTestCompile "info.cukes:cucumber-junit:1.2.5"
+//    featureTestCompile "info.cukes:cucumber-spring:1.2.5"
 }
 
-sourceSets {
-    featureTest {
-        java {
-            compileClasspath += main.output + test.output
-            runtimeClasspath += main.output + test.output
-            srcDir file('src/featureTest/java')
-        }
-        resources.srcDir file('src/featureTest/resources')
-    }
-}
+//sourceSets {
+//    testIntegration {
+//        java {
+//            compileClasspath += main.output + test.output
+//            runtimeClasspath += main.output + test.output
+//            srcDir file('src/testIntegration/java')
+//        }
+//        resources.srcDir file('src/testIntegration/resources')
+//    }
+//}
 
 task wrapper(type: Wrapper) {
     distributionUrl = "https://services.gradle.org/distributions/gradle-${gradleWrapperVersion}-all.zip"
 }
+
+//task stubbedFeatureTest(type: Test) {
+//    include 'com/nab/se/featureTest/configuration/testRunner/CucumberTestRunner.class'
+//    systemProperties['cucumber.options'] = "-t @StubbedTest"
+//    systemProperties['spring.profiles.active'] = "stubbedFeatureTest"
+//    testClassesDir = sourceSets.testIntegration.output.classesDir
+//    classpath = sourceSets.testIntegration.runtimeClasspath
+//    outputs.upToDateWhen { false }
+//}
+//
+//task testIntegration(type: Test) {
+//    include 'com/nab/se/testIntegration/configuration/testRunner/CucumberTestRunner.class'
+//    systemProperties['cucumber.options'] = "-t @IntegrationTest"
+//    systemProperties['spring.profiles.active'] = "testIntegration"
+//    testClassesDir = sourceSets.testIntegration.output.classesDir
+//    classpath = sourceSets.testIntegration.runtimeClasspath
+//    outputs.upToDateWhen { false }
+//}
