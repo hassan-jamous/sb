@@ -1,13 +1,17 @@
 package com.nab.se.testIntegration.controllers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.nab.se.testIntegration.components.requestValidators.TaskRequestValidation;
 import com.nab.se.testIntegration.domains.nabDomain.NabTaskDomain;
 import com.nab.se.testIntegration.nonFunctional.aspects.LoggingAspect;
 import com.nab.se.testIntegration.services.ToDoTaskService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.mockito.Mockito;
+import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -22,21 +26,17 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import static org.junit.Assert.assertEquals;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 
-@RunWith(SpringRunner.class)
-@SpringBootTest
+@RunWith(MockitoJUnitRunner.class)
 public class TaskControllerTest {
 
-    @MockBean
+    @Mock
+    TaskRequestValidation taskRequestValidation;
+
+    @Mock
     ToDoTaskService toDoTaskService;
 
-    @SpyBean
-    LoggingAspect loggingAspect;
-
-    @Autowired
+    @InjectMocks
     TaskController taskController;
-
-    @Autowired
-    private ObjectMapper jsonObjectMapper;
 
     private MockMvc mvc;
 
@@ -52,16 +52,16 @@ public class TaskControllerTest {
         nabTaskDomainExample.setTaskIdFromSource(3);
 
         Mockito.when(toDoTaskService.getTask(3)).thenReturn(nabTaskDomainExample);
+        Mockito.doNothing().when(taskRequestValidation).verifyToDoTaskRequest(3);
 
         MockHttpServletResponse response = mvc.perform(
                 get("/todo/3").accept(MediaType.APPLICATION_JSON))
                 .andReturn().getResponse();
 
         Mockito.verify(toDoTaskService, Mockito.times(1)).getTask(3);
-        Mockito.verify(loggingAspect, Mockito.times(1)).around(Mockito.any());
         assertEquals(HttpStatus.OK.value(), response.getStatus());
 
-        NabTaskDomain taskResponse = jsonObjectMapper.readValue(response.getContentAsString(), NabTaskDomain.class);
+        NabTaskDomain taskResponse = new ObjectMapper().readValue(response.getContentAsString(), NabTaskDomain.class);
         assertEquals(3, taskResponse.getTaskIdFromSource());
 
     }

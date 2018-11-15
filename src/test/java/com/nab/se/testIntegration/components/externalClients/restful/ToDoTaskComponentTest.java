@@ -4,28 +4,26 @@ import com.nab.se.testIntegration.domains.jsonPlaceHolderDomain.Task;
 import com.nab.se.testIntegration.nonFunctional.exceptions.ValidationException;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.test.context.TestPropertySource;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.mockito.junit.MockitoJUnitRunner;
+import org.springframework.test.util.ReflectionTestUtils;
 import org.springframework.web.client.RestTemplate;
 
 import static org.junit.Assert.assertEquals;
 
-@RunWith(SpringRunner.class)
-@SpringBootTest
-@TestPropertySource(properties = { "endpoints.jsonPlaceHolderDomain=http://test.test/" })
+@RunWith(MockitoJUnitRunner.class)
 public class ToDoTaskComponentTest {
-    @MockBean
+    @Mock
     private RestTemplate restTemplate;
 
-    @Autowired
+    @InjectMocks
     ToDoTaskComponent toDoTaskComponent;
 
     @Test
     public void It_Should_Return_Task_Object_When_Something() throws Exception {
+        ReflectionTestUtils.setField(toDoTaskComponent, "jsonPlaceHolderEndpoint", "http://test.test/");
         Task atask = new Task(3,4, "title", false);
         Mockito.when(restTemplate.getForObject("http://test.test/13", Task.class)).thenReturn(atask);
         Task task = toDoTaskComponent.getTask(13);
@@ -35,8 +33,9 @@ public class ToDoTaskComponentTest {
 
     @Test(expected = ValidationException.class)
     public void It_Should_Throw_Validation_Exception_When_Return_Value_Is_Wrong() throws Exception {
+        ReflectionTestUtils.setField(toDoTaskComponent, "jsonPlaceHolderEndpoint", "http://test1.test/");
         Task atask = new Task(3,4, "", false);
-        Mockito.when(restTemplate.getForObject("http://test.test/13", Task.class)).thenReturn(atask);
+        Mockito.when(restTemplate.getForObject("http://test1.test/13", Task.class)).thenReturn(atask);
         toDoTaskComponent.getTask(13);
 
     }
