@@ -1,6 +1,7 @@
 package com.nab.se.testIntegration.components.externalClients.restful;
 
 import com.nab.se.testIntegration.domains.jsonPlaceHolderDomain.Task;
+import com.nab.se.testIntegration.nonFunctional.exceptions.ValidationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -16,8 +17,16 @@ public class ToDoTaskComponent {
     private RestTemplate restTemplate;
 
     public Task getTask(int taskId) {
-        return restTemplate.getForObject(
+        Task response = restTemplate.getForObject(
                 jsonPlaceHolderEndpoint + taskId, Task.class);
+        this.validateTask(response);
+        return response;
+    }
+
+    private void validateTask(Task task) {
+        if(task.getTitle().equals("")) {
+            throw new ValidationException();
+        }
     }
 
 }

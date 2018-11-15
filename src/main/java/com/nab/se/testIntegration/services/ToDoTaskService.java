@@ -1,7 +1,7 @@
 package com.nab.se.testIntegration.services;
 
 import com.nab.se.testIntegration.components.externalClients.restful.ToDoTaskComponent;
-import com.nab.se.testIntegration.domains.bigasusDomain.BigasusTask;
+import com.nab.se.testIntegration.domains.nabDomain.NabTaskDomain;
 import com.nab.se.testIntegration.domains.jsonPlaceHolderDomain.Task;
 import com.nab.se.testIntegration.components.domainMapper.JsonPlaceHolderToBigasusMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +15,7 @@ public class ToDoTaskService {
     @Autowired
     JsonPlaceHolderToBigasusMapper jsonPlaceHolderToBigasusMapper;
 
-    public BigasusTask getTask(int taskId) {
+    public NabTaskDomain getTask(int taskId) {
         Task jsonPlaceHolderTask = this.toDoTaskComponent.getTask(taskId);
         return jsonPlaceHolderToBigasusMapper.mapJsonPlaceHolderTaskToBigasusTask(jsonPlaceHolderTask);
     }

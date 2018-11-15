@@ -1,7 +1,7 @@
 package com.nab.se.testIntegration.stepdefinitions;
 
 
-import com.nab.se.testIntegration.domains.bigasusDomain.BigasusTask;
+import com.nab.se.testIntegration.domains.nabDomain.BigasusTask;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.springframework.http.ResponseEntity;
