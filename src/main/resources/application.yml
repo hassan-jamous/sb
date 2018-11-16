@@ -21,10 +21,11 @@ endpoints:
   jsonPlaceHolderDomain: https://jsonplaceholder.typicode.com/todos/
 ---
 spring:
-    profiles: IntegrationTest
+    profiles: testIntegration
 
 endpoints:
   jsonPlaceHolderDomain: https://jsonplaceholder.typicode.com/todos/
+  serverAddress: http://localhost:8080/
 ---
 spring:
     profiles: prod

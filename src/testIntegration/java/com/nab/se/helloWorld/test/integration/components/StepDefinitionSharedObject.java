@@ -1,5 +1,4 @@
-package com.nab.se.helloWorld.test.feature.cucumber.component;
-
+package com.nab.se.helloWorld.test.integration.components;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -7,14 +6,11 @@ import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 
-
 @Component
 @Getter
 @Setter
-public class CommonObjects {
+public class StepDefinitionSharedObject {
     private String userId;
-    private String adviserId;
-    private String clientId;
 
     @PostConstruct
     public void initializeObjects() {
@@ -23,7 +19,6 @@ public class CommonObjects {
 
     public void reInitialize() {
         this.userId = null;
-        this.adviserId = null;
-        this.clientId = null;
+
     }
 }
