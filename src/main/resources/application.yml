@@ -15,7 +15,7 @@ endpoints:
   jsonPlaceHolderDomain: https://jsonplaceholder.typicode.com/todos/
 ---
 spring:
-    profiles: StubbedTest
+    profiles: testStubbed
 
 endpoints:
   jsonPlaceHolderDomain: https://jsonplaceholder.typicode.com/todos/

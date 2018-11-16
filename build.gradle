@@ -26,16 +26,37 @@ dependencyManagement {
     }
 }
 
-configurations {
-    featureTestCompile.extendsFrom testCompile
-    featureTestRuntime.extendsFrom testRuntime
-}
-
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 repositories {
     mavenCentral()
+}
+
+sourceSets {
+    testStubbed {
+        java {
+            compileClasspath += main.output + test.output
+            runtimeClasspath += main.output + test.output
+            srcDir file('src/testStubbed/java')
+        }
+        resources.srcDir file('src/testStubbed/resources')
+    }
+    testFeature {
+        java {
+            compileClasspath += main.output + test.output
+            runtimeClasspath += main.output + test.output
+            srcDir file('src/testFeature/java')
+        }
+        resources.srcDir file('src/testFeature/resources')
+    }
+}
+
+configurations {
+    testStubbedCompile.extendsFrom testCompile
+    testStubbedRuntime.extendsFrom testRuntime
+    testFeatureCompile.extendsFrom testCompile
+    testFeatureRuntime.extendsFrom testRuntime
 }
 
 dependencies {
@@ -45,42 +66,31 @@ dependencies {
 
     testCompile "org.springframework.boot:spring-boot-starter-test"
 
-//    featureTestCompile "org.springframework.boot:spring-boot-starter-test"
-//    featureTestCompile "com.github.tomakehurst:wiremock-standalone:2.16.0"
-//    featureTestCompile "info.cukes:cucumber-java:1.2.5"
-//    featureTestCompile "info.cukes:cucumber-junit:1.2.5"
-//    featureTestCompile "info.cukes:cucumber-spring:1.2.5"
+    testFeatureCompile "info.cukes:cucumber-java:1.2.5"
+    testFeatureCompile "info.cukes:cucumber-junit:1.2.5"
+    testFeatureCompile "info.cukes:cucumber-spring:1.2.5"
 }
 
-//sourceSets {
-//    testIntegration {
-//        java {
-//            compileClasspath += main.output + test.output
-//            runtimeClasspath += main.output + test.output
-//            srcDir file('src/testIntegration/java')
-//        }
-//        resources.srcDir file('src/testIntegration/resources')
-//    }
-//}
 
 task wrapper(type: Wrapper) {
     distributionUrl = "https://services.gradle.org/distributions/gradle-${gradleWrapperVersion}-all.zip"
 }
 
-//task stubbedFeatureTest(type: Test) {
-//    include 'com/nab/se/featureTest/configuration/testRunner/CucumberTestRunner.class'
-//    systemProperties['cucumber.options'] = "-t @StubbedTest"
-//    systemProperties['spring.profiles.active'] = "stubbedFeatureTest"
-//    testClassesDir = sourceSets.testIntegration.output.classesDir
-//    classpath = sourceSets.testIntegration.runtimeClasspath
-//    outputs.upToDateWhen { false }
-//}
-//
-//task testIntegration(type: Test) {
-//    include 'com/nab/se/testIntegration/configuration/testRunner/CucumberTestRunner.class'
-//    systemProperties['cucumber.options'] = "-t @IntegrationTest"
-//    systemProperties['spring.profiles.active'] = "testIntegration"
-//    testClassesDir = sourceSets.testIntegration.output.classesDir
-//    classpath = sourceSets.testIntegration.runtimeClasspath
-//    outputs.upToDateWhen { false }
-//}
+
+task testStubbed(type: Test) {
+    include 'com/nab/se/helloWorld/test/stubbed/*.class'
+    include 'com/nab/se/helloWorld/test/stubbed/*/*.class'
+    systemProperties['spring.profiles.active'] = "testStubbed"
+    testClassesDir = sourceSets.testStubbed.output.classesDir
+    classpath = sourceSets.testStubbed.runtimeClasspath
+    outputs.upToDateWhen { false }
+}
+
+task testIntegration(type: Test) {
+    include 'com/nab/se/helloWorld/test/integration/configuration/testRunner/CucumberTestRunner.class'
+    systemProperties['cucumber.options'] = "-t @IntegrationTest"
+    systemProperties['spring.profiles.active'] = "testFeature"
+    testClassesDir = sourceSets.testFeature.output.classesDir
+    classpath = sourceSets.testFeature.runtimeClasspath
+    outputs.upToDateWhen { false }
+}
